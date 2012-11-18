@@ -1,7 +1,0 @@
-
---This line, and those below, will be ignored--
-
-M    tests/education_test.cpp
-M    education/cpu_tutor_algorithms_alpha.cpp
-M    education/cuda_tutor_algorithms.cu
-M    education/tutor.cpp

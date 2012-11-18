@@ -1,0 +1,165 @@
+/*
+ * Network.cpp
+ *
+ *  Created on: Feb 24, 2011
+ *      Author: dragn
+ */
+
+#include "Network.h"
+
+Network::Network() {
+}
+
+Network::~Network() {
+}
+
+void RandomLinkNetwork::print(std::ostream *stream) {
+	*stream << "RandomLinkNetwork. Weigth map: " << std::endl;
+	for (int i = 0; i < fullSize; i++) {
+		for (int j = 0; j < fullSize; j++) {
+			stream->width(10);
+			stream->precision(2);
+			stream->setf(std::ios::fixed, std::ios::floatfield);
+			*stream << weight(i, j);
+		}
+		*stream << std::endl;
+	}
+}
+
+void RandomLinkNetwork::serialize(std::ostream *stream) {
+	*stream << td.getInputSize() << " " << td.getOutputSize() << " "
+			<< td.getSize() << std::endl;
+	for (int i = 0; i < fullSize * fullSize; i++) {
+		*stream << data[i] << " ";
+	}
+	//	int buffer[3] = { inputSize, outputSize, hiddenSize };
+	//	stream->write( (char*)buffer, 3*sizeof(int) );
+	//	stream->write( (char*)data, fullSize*fullSize*sizeof(float) );
+}
+
+void RandomLinkNetwork::deserialize(std::istream *stream) {
+	if (data != NULL) {
+		std::cerr
+				<< "Error! deserialize() must be called on new RandomLinkNetwork"
+				<< std::endl;
+		return;
+	}
+	int inputSize;
+	int outputSize;
+	*stream >> inputSize;
+	*stream >> outputSize;
+	*stream >> fullSize;
+
+	td.setInputSize(inputSize);
+	td.setOutputSize(outputSize);
+	td.setSize(fullSize);
+
+	data = new float[fullSize * fullSize];
+	for (int i = 0; i < fullSize * fullSize; i++) {
+		*stream >> data[i];
+	}
+	//	int buffer[3];
+	//	stream->read( (char*)buffer, 3*sizeof(int) );
+	//
+	//	inputSize = buffer[0];
+	//	outputSize = buffer[1];
+	//	hiddenSize = buffer[2];
+	//	fullSize = inputSize + hiddenSize + outputSize;
+	//	data = new float[fullSize*fullSize];
+	//
+	//	stream->read( (char*)data, fullSize*fullSize*sizeof(float) );
+}
+
+void RandomLinkNetwork::randomize(std::vector<int>* connections) {
+	for (int index = 0; index < connections->size(); index += 2) {
+		int i = connections->at(index);
+		int j = connections->at(index + 1);
+		//		std::cout << "New con: [" << i << ", " << j << "]" << std::endl;
+		data[j * fullSize + i] = 1 - 2 * (float) rand() / RAND_MAX;
+	}
+}
+//
+//float RandomLinkNetwork::getScore(float *output, TestCase *test) {
+//	float score = 0;
+//	float* mustbe = test->getOutput();
+//
+//	if (output[0] > output[1]) {
+//		score += 10000;
+//	}
+//
+//	float diff = mustbe[0] - output[0];
+//	if (output[0] < mustbe[0]) {
+//		score += diff * diff;
+//	} else {
+//		score += diff * diff * 10;
+//	}
+//
+//	diff = mustbe[1] - output[1];
+//	if (output[1] > mustbe[1]) {
+//		score += diff * diff;
+//	} else {
+//		score += diff * diff * 10;
+//	}
+//
+//	return score;
+//}
+
+Network* RandomLinkNetwork::crossover(Network* father) {
+	Network* child = new RandomLinkNetwork(td);
+
+	std::vector<int>* conns = td.getConnections();
+	for (int conn = 0; conn < conns->size(); conn += 2) {
+		int i = conns->at(conn);
+		int j = conns->at(conn + 1);
+
+		int index = i * fullSize + j;
+
+		int dice = rand() % 100;
+
+		if (dice < 50) {
+			child->data[index] = this->data[index];
+		} else {
+			child->data[index] = father->data[index];
+		}
+	}
+
+//	for (int i = 0; i < fullSize; i++) {
+//		for (int j = 0; j < fullSize; j++) {
+//
+//			int index = i * fullSize + j;
+//
+//			int dice = rand() % 100;
+//
+//			if (dice < 50) {
+//				child->data[index] = this->data[index];
+//			} else {
+//				child->data[index] = father->data[index];
+//			}
+//		}
+//	}
+	return child;
+}
+
+void RandomLinkNetwork::mutate() {
+	float coef = 2 - (float) 4 * rand() / RAND_MAX;
+
+	int conn = rand() % (td.getConnections()->size() / 2); // pick random connection
+
+	int i = td.getConnections()->at(conn * 2);
+	int j = td.getConnections()->at(conn * 2 + 1);
+
+	int index = j * fullSize + i;
+//		std::cout << "Mutation: " << data[index] << " -> " << data[index] * coef
+//				<< std::endl;
+	data[index] *= coef;
+}
+
+void RandomLinkNetwork::init(int size) {
+	fullSize = size;
+	//	std::cout << "Creating random link network of size: " << fullSize
+	//			<< std::endl;
+	data = new float[fullSize * fullSize];
+	memset(data, 0, fullSize * fullSize * sizeof(float));
+	//	std::cout << fullSize * fullSize * sizeof(float) << " bytes allocated."
+	//			<< std::endl;
+}

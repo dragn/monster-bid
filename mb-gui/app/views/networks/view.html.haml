@@ -1,0 +1,20 @@
+= link_to 'Go Back', '/'
+
+%h3 Networks list
+
+%table#networks
+  %thead
+    %th
+    %th Name
+    %th Size
+    %th Input/Output size
+  %tbody
+    -@networks.each do |net|
+      %tr
+        %td
+          = check_box_tag 'net_id'
+        %td= net.name
+        %td= net.size
+        %td= net.input_size.to_s + '/' + net.output_size.to_s
+
+

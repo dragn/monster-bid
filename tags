@@ -1,0 +1,148 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+COMMON_INCLUDE_HPP_	./src/common/common_include.h	9;"	d
+CONNECTED_LAYERS_SIZES	./src/education/tutor.cpp	/^const static char* CONNECTED_LAYERS_SIZES = "connected-layers-sizes";$/;"	v	file:
+CONNECTED_LAYERS_TYPE	./src/education/tutor.cpp	/^const static char* CONNECTED_LAYERS_TYPE = "connected-layers";$/;"	v	file:
+CPUTutorAlgorithms	./src/education/cpu_tutor_algorithms.cpp	/^CPUTutorAlgorithms::CPUTutorAlgorithms ()$/;"	f	class:CPUTutorAlgorithms
+CPUTutorAlgorithms	./src/education/cpu_tutor_algorithms.h	/^	class CPUTutorAlgorithms : public TutorAlgorithms$/;"	c	namespace:mb
+CpuEmulator	./src/emulation/cpu_emulator.cpp	/^CpuEmulator::CpuEmulator ()$/;"	f	class:CpuEmulator
+CpuEmulator	./src/emulation/cpu_emulator.h	/^	class CpuEmulator: public Emulator$/;"	c	namespace:mb
+DEVICE_OPTION	./src/education/tutor.cpp	/^const static char* DEVICE_OPTION = "computation-device";$/;"	v	file:
+Emulator	./src/emulation/emulator.cpp	/^Emulator::Emulator ()$/;"	f	class:Emulator
+Emulator	./src/emulation/emulator.h	/^	class Emulator$/;"	c	namespace:mb
+EmulatorFrontend	./src/emulation/emulator_frontend.cpp	/^EmulatorFrontend::EmulatorFrontend ()$/;"	f	class:EmulatorFrontend
+EmulatorFrontend	./src/emulation/emulator_frontend.h	/^	class EmulatorFrontend$/;"	c	namespace:mb
+MAX_BIAS_OPTION	./src/education/tutor.cpp	/^const static char* MAX_BIAS_OPTION = "max-bias";$/;"	v	file:
+MAX_WHEIGHT_OPTION	./src/education/tutor.cpp	/^const static char* MAX_WHEIGHT_OPTION = "max-wheight";$/;"	v	file:
+NETWORK_H_	./src/network/network.h	9;"	d
+Network	./src/network/network.cpp	/^Network::Network () {$/;"	f	class:Network
+Network	./src/network/network.cpp	/^Network::Network (std::istream* is)$/;"	f	class:Network
+Network	./src/network/network.cpp	/^Network::Network (uint size, uint input_size, uint output_size, t_wheight *wheight_map, t_wheight *bias_map)$/;"	f	class:Network
+Network	./src/network/network.cpp	/^Network::Network(Topology* tp, t_wheight max_wheight, t_wheight max_bias)$/;"	f	class:Network
+Network	./src/network/network.h	/^	class Network {$/;"	c	namespace:mb
+NetworkPtr	./src/network/network.h	/^	typedef boost::shared_ptr<Network> NetworkPtr;$/;"	t	namespace:mb
+POOL_SIZE_OPTION	./src/education/tutor.cpp	/^const static char* POOL_SIZE_OPTION = "pool-size";$/;"	v	file:
+STEPS_OPTION	./src/education/tutor.cpp	/^const static char* STEPS_OPTION = "steps";$/;"	v	file:
+TESTCASE_H_	./src/education/testcase.h	21;"	d
+TESTCASE_LOADER_H_	./src/education/testcase_loader.h	21;"	d
+TOPOLOGY_H_	./src/network/topology.h	9;"	d
+TOPOLOGY_INPUT_SIZE_OPTION	./src/education/tutor.cpp	/^const static char* TOPOLOGY_INPUT_SIZE_OPTION = "topology-input-size";$/;"	v	file:
+TOPOLOGY_OUTPUT_SIZE_OPTION	./src/education/tutor.cpp	/^const static char* TOPOLOGY_OUTPUT_SIZE_OPTION = "topology-output-size";$/;"	v	file:
+TOPOLOGY_TYPE_OPTION	./src/education/tutor.cpp	/^const static char* TOPOLOGY_TYPE_OPTION = "topology-type";$/;"	v	file:
+TUTOR_ALGORITHMS_H_	./src/education/tutor_algorithms.h	20;"	d
+TestCase	./src/education/testcase.cpp	/^TestCase::TestCase ()$/;"	f	class:TestCase
+TestCase	./src/education/testcase.h	/^	class TestCase$/;"	c	namespace:mb
+TestCaseLoader	./src/education/testcase_loader.h	/^	class TestCaseLoader$/;"	c	namespace:mb
+TestCasePtr	./src/education/testcase.h	/^	typedef boost::shared_ptr<TestCase> TestCasePtr;$/;"	t	namespace:mb
+Topology	./src/network/topology.cpp	/^Topology::Topology ( int total_size, int input_size, int output_size):$/;"	f	class:Topology
+Topology	./src/network/topology.cpp	/^Topology::Topology (): total_size(3), input_size(1), output_size(1)$/;"	f	class:Topology
+Topology	./src/network/topology.h	/^	class Topology$/;"	c	namespace:mb
+TopologyAnalyze	./src/tools/topology_analyze.h	/^	TopologyAnalyze () {};                             \/* constructor      *\/$/;"	f	class:mb::TopologyAnalyze
+TopologyAnalyze	./src/tools/topology_analyze.h	/^class TopologyAnalyze$/;"	c	namespace:mb
+TopologyFactory	./src/tools/topology_factory.cpp	/^TopologyFactory::TopologyFactory ()$/;"	f	class:TopologyFactory
+TopologyFactory	./src/tools/topology_factory.h	/^	class TopologyFactory$/;"	c	namespace:mb
+Tutor	./src/education/tutor.cpp	/^Tutor::Tutor ( std::string config_file ) : config_file( config_file )$/;"	f	class:Tutor
+Tutor	./src/education/tutor.cpp	/^Tutor::Tutor () : config_file( "conf\/tutor.conf" )$/;"	f	class:Tutor
+Tutor	./src/education/tutor.h	/^	class Tutor$/;"	c	namespace:mb
+TutorAlgorithms	./src/education/tutor_algorithms.h	/^			TutorAlgorithms () {};                             \/* constructor *\/$/;"	f	class:mb::TutorAlgorithms
+TutorAlgorithms	./src/education/tutor_algorithms.h	/^	class TutorAlgorithms$/;"	c	namespace:mb
+_pool	./src/education/tutor.h	/^			std::vector<NetworkPtr> _pool;$/;"	m	class:mb::Tutor
+add_connection	./src/network/topology.cpp	/^void Topology::add_connection ( int i, int j )$/;"	f	class:Topology
+algorithms	./src/education/tutor.h	/^			boost::shared_ptr<TutorAlgorithms> algorithms;$/;"	m	class:mb::Tutor
+analyze_and_get_depth	./src/tools/topology_analyze.cpp	/^int TopologyAnalyze::analyze_and_get_depth ( Topology* tp )$/;"	f	class:TopologyAnalyze
+choose_emulator	./src/emulation/emulator_frontend.cpp	/^EmulatorFrontend::choose_emulator ()$/;"	f	class:EmulatorFrontend
+config_file	./src/education/tutor.h	/^			std::string config_file;$/;"	m	class:mb::Tutor
+connections	./src/network/topology.h	/^			std::list<int> connections;$/;"	m	class:mb::Topology
+cpu_emulator	./src/emulation/emulator_frontend.h	/^			boost::shared_ptr<Emulator> cpu_emulator;			$/;"	m	class:mb::EmulatorFrontend
+create_connected_layers_topology	./src/tools/topology_factory.cpp	/^TopologyFactory::create_connected_layers_topology( $/;"	f	class:TopologyFactory
+educate	./src/education/tutor.cpp	/^void Tutor::educate ()$/;"	f	class:Tutor
+emulator	./src/education/cpu_tutor_algorithms.h	/^			boost::shared_ptr<EmulatorFrontend> emulator;$/;"	m	class:mb::CPUTutorAlgorithms
+examination	./src/education/cpu_tutor_algorithms.cpp	/^CPUTutorAlgorithms::examination ( std::vector<NetworkPtr> pool, std::vector<TestCasePtr> tests )$/;"	f	class:CPUTutorAlgorithms
+fitness	./src/education/cpu_tutor_algorithms.cpp	/^CPUTutorAlgorithms::fitness ( TestCasePtr test, boost::shared_array<t_data> output )$/;"	f	class:CPUTutorAlgorithms
+foreach	./src/common/common_include.h	21;"	d
+foreach	./src/common/common_include.h	23;"	d
+get_best	./src/education/tutor.cpp	/^Tutor::get_best ()$/;"	f	class:Tutor
+get_bias	./src/network/network.cpp	/^Network::get_bias ( uint i )$/;"	f	class:Network
+get_connection_index	./src/network/topology.cpp	/^inline int Topology::get_connection_index ( int i, int j )$/;"	f	class:Topology
+get_input	./src/education/testcase.cpp	/^TestCase::get_input ()$/;"	f	class:TestCase
+get_input_size	./src/education/testcase.cpp	/^uint TestCase::get_input_size ()$/;"	f	class:TestCase
+get_input_size	./src/network/network.cpp	/^uint Network::get_input_size ()$/;"	f	class:Network
+get_input_size	./src/network/topology.cpp	/^int Topology::get_input_size ()$/;"	f	class:Topology
+get_lines	./src/education/testcase_loader.cpp	/^TestCaseLoader::get_lines( fs::ifstream* ifs ){$/;"	f	class:TestCaseLoader
+get_options	./src/education/tutor.cpp	/^Tutor::get_options ()$/;"	f	class:Tutor
+get_output	./src/education/testcase.cpp	/^TestCase::get_output ()$/;"	f	class:TestCase
+get_output_size	./src/education/testcase.cpp	/^uint TestCase::get_output_size ()$/;"	f	class:TestCase
+get_output_size	./src/network/network.cpp	/^uint Network::get_output_size ()$/;"	f	class:Network
+get_output_size	./src/network/topology.cpp	/^int Topology::get_output_size ()$/;"	f	class:Topology
+get_size	./src/network/network.cpp	/^uint Network::get_size ()$/;"	f	class:Network
+get_topology	./src/education/tutor.cpp	/^Tutor::get_topology ()$/;"	f	class:Tutor
+get_total_size	./src/network/topology.cpp	/^int Topology::get_total_size ()$/;"	f	class:Topology
+get_wheight	./src/network/network.cpp	/^Network::get_wheight ( uint i, uint j )$/;"	f	class:Network
+init	./src/education/tutor.cpp	/^void Tutor::init ()$/;"	f	class:Tutor
+init_algorithms	./src/education/tutor.cpp	/^Tutor::init_algorithms ()$/;"	f	class:Tutor
+init_data	./src/network/network.cpp	/^void Network::init_data ()$/;"	f	class:Network
+init_options	./src/education/tutor.cpp	/^void Tutor::init_options ()$/;"	f	class:Tutor
+input	./src/education/testcase.h	/^			boost::shared_array<t_data> input;$/;"	m	class:mb::TestCase
+input_size	./src/education/testcase.h	/^			uint input_size;$/;"	m	class:mb::TestCase
+input_size	./src/network/network.h	/^			uint input_size;$/;"	m	class:mb::Network
+input_size	./src/network/topology.h	/^			int input_size;$/;"	m	class:mb::Topology
+is_connected	./src/network/topology.cpp	/^bool Topology::is_connected( int i, int j )$/;"	f	class:Topology
+load_from_file	./src/education/testcase_loader.cpp	/^TestCaseLoader::load_from_file ( std::string filepath )$/;"	f	class:TestCaseLoader
+main	./src/education/education_test.cpp	/^main ( int argc, char *argv[] )$/;"	f
+main	./src/education/tutor_main.cpp	/^main ( int argc, char *argv[] )$/;"	f
+main	./src/network/network_test.cpp	/^int main ( int argc, char *argv[] )$/;"	f
+main	./src/tools/tester_main.cpp	/^main ( int argc, char *argv[] )$/;"	f
+make_child	./src/education/cpu_tutor_algorithms.cpp	/^CPUTutorAlgorithms::make_child( NetworkPtr parent1, NetworkPtr parent2 ){$/;"	f	class:CPUTutorAlgorithms
+mb	./src/education/cpu_tutor_algorithms.h	/^namespace mb{$/;"	n
+mb	./src/education/testcase.h	/^namespace mb{$/;"	n
+mb	./src/education/testcase_loader.h	/^namespace mb{$/;"	n
+mb	./src/education/tutor.h	/^namespace mb{$/;"	n
+mb	./src/education/tutor_algorithms.h	/^namespace mb{$/;"	n
+mb	./src/emulation/cpu_emulator.h	/^namespace mb {$/;"	n
+mb	./src/emulation/emulator.h	/^namespace mb {	$/;"	n
+mb	./src/emulation/emulator_frontend.h	/^namespace mb {$/;"	n
+mb	./src/network/network.h	/^namespace mb {$/;"	n
+mb	./src/network/topology.h	/^namespace mb {$/;"	n
+mb	./src/tools/topology_analyze.h	/^namespace mb {$/;"	n
+mb	./src/tools/topology_factory.h	/^namespace mb {$/;"	n
+mutate	./src/education/cpu_tutor_algorithms.cpp	/^CPUTutorAlgorithms::mutate ( NetworkPtr network )$/;"	f	class:CPUTutorAlgorithms
+mutation	./src/education/cpu_tutor_algorithms.cpp	/^void CPUTutorAlgorithms::mutation ( std::vector<NetworkPtr> pool, float ratio )$/;"	f	class:CPUTutorAlgorithms
+options	./src/education/tutor.h	/^			boost::shared_ptr<po::options_description> options;$/;"	m	class:mb::Tutor
+options_vm	./src/education/tutor.h	/^			po::variables_map options_vm;$/;"	m	class:mb::Tutor
+output	./src/education/testcase.h	/^			boost::shared_array<t_data> output;$/;"	m	class:mb::TestCase
+output_size	./src/education/testcase.h	/^			uint output_size;$/;"	m	class:mb::TestCase
+output_size	./src/network/network.h	/^			uint output_size;$/;"	m	class:mb::Network
+output_size	./src/network/topology.h	/^			int output_size;$/;"	m	class:mb::Topology
+pool	./src/education/tutor.h	/^			std::vector<NetworkPtr> pool;$/;"	m	class:mb::Tutor
+print	./src/network/network.cpp	/^Network::print(std::ostream* os){$/;"	f	class:Network
+print_help	./src/education/tutor_main.cpp	/^void print_help(po::options_description options){$/;"	f
+print_help	./src/tools/tester_main.cpp	/^void print_help(po::options_description cmd_opts){$/;"	f
+print_test_case	./src/education/education_test.cpp	/^void print_test_case( TestCasePtr test ){$/;"	f
+remove_connection	./src/network/topology.cpp	/^void Topology::remove_connection ( int i, int j )$/;"	f	class:Topology
+reproduction	./src/education/cpu_tutor_algorithms.cpp	/^std::vector<NetworkPtr> CPUTutorAlgorithms::reproduction ( std::vector<NetworkPtr> pool, float ratio )$/;"	f	class:CPUTutorAlgorithms
+selection	./src/education/cpu_tutor_algorithms.cpp	/^CPUTutorAlgorithms::selection ( std::vector<NetworkPtr> pool, std::vector<float> scores, float ratio )$/;"	f	class:CPUTutorAlgorithms
+serialize	./src/network/network.cpp	/^Network::serialize(std::ostream* os){$/;"	f	class:Network
+set_bias	./src/network/network.cpp	/^void Network::set_bias ( uint i, t_wheight bias )$/;"	f	class:Network
+set_input	./src/education/testcase.cpp	/^void TestCase::set_input ( uint input_size, t_data *data )$/;"	f	class:TestCase
+set_output	./src/education/testcase.cpp	/^void TestCase::set_output ( uint output_size, t_data *data )$/;"	f	class:TestCase
+set_tests	./src/education/tutor.cpp	/^void Tutor::set_tests ( std::vector<TestCasePtr> tests )$/;"	f	class:Tutor
+set_wheight	./src/network/network.cpp	/^void Network::set_wheight ( uint i, uint j, t_wheight wheight )$/;"	f	class:Network
+single_run	./src/emulation/cpu_emulator.cpp	/^CpuEmulator::single_run ( NetworkPtr net, boost::shared_array<t_data> input )$/;"	f	class:CpuEmulator
+single_run	./src/emulation/emulator_frontend.cpp	/^EmulatorFrontend::single_run ( NetworkPtr net, boost::shared_array<t_data> input )$/;"	f	class:EmulatorFrontend
+t_data	./src/common/common_include.h	/^typedef float t_data;$/;"	t
+t_tokenizer	./src/education/tutor.cpp	/^typedef boost::tokenizer< boost::escaped_list_separator<char> > t_tokenizer;$/;"	t	file:
+t_wheight	./src/common/common_include.h	/^typedef float t_wheight;$/;"	t
+test	./src/education/cpu_tutor_algorithms.cpp	/^CPUTutorAlgorithms::test ( NetworkPtr network, TestCasePtr test )$/;"	f	class:CPUTutorAlgorithms
+tests	./src/education/tutor.h	/^			std::vector<TestCasePtr> tests;$/;"	m	class:mb::Tutor
+topology	./src/education/tutor.h	/^			boost::shared_ptr<Topology> topology;$/;"	m	class:mb::Tutor
+total_size	./src/network/network.h	/^			uint total_size;$/;"	m	class:mb::Network
+total_size	./src/network/topology.h	/^			int total_size;$/;"	m	class:mb::Topology
+uint	./src/common/common_include.h	/^typedef unsigned int uint;$/;"	t
+wheight_map	./src/network/network.h	/^			boost::shared_array<t_wheight> wheight_map;$/;"	m	class:mb::Network
+~Network	./src/network/network.cpp	/^Network::~Network () {}$/;"	f	class:Network
+~Topology	./src/network/topology.cpp	/^Topology::~Topology(){}$/;"	f	class:Topology
+~TopologyAnalyze	./src/tools/topology_analyze.h	/^	~TopologyAnalyze () {};                            \/* destructor       *\/$/;"	f	class:mb::TopologyAnalyze

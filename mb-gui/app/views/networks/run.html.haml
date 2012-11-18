@@ -1,0 +1,36 @@
+%script{ :type => 'text/javascript', :src => 'https://www.google.com/jsapi' }
+:javascript
+  // Load the Visualization API and the piechart package.
+  google.load('visualization', '1.0', {'packages':['corechart']});
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+
+    // Create the data table.
+    var data = new google.visualization.arrayToDataTable(#{@tickers.to_s}, [['2010-04-06', 178, 178, 178, 178]]);
+    var options = {
+      'width':600,
+      'height':400};
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+
+= form_tag '/', :action => 'run', :method => 'get' do
+  %table
+    %tbody
+      %tr
+        %td Choose a network:
+        %td 
+          = select_tag "net_id", options_from_collection_for_select(@networks, "id", "name", params[:net_id].to_i)
+        %td
+          = link_to "Examine networks", '/networks'
+      %tr
+        %td Choose a dataset:
+        %td
+          = select_tag "ds_id", options_from_collection_for_select(@datasets, "id", "name", params[:ds_id].to_i)
+  = submit_tag "Refresh"
+  %div#chart_div

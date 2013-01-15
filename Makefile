@@ -46,7 +46,7 @@ SOURCES         := src/Common/Ticker.cpp src/Formatter/Formatter.cpp src/Formatt
 
 NETWORKTEST_SOURCES := src/network/network.cpp src/network/topology.cpp src/tests/network_test.cpp src/tools/topology_analyze.cpp src/emulation/emulator_frontend.cpp src/emulation/cpu_emulator.cpp src/emulation/emulator.cpp src/tools/topology_factory.cpp
 
-EDUCATIONTEST_SOURCES := src/tests/education_test.cpp src/network/network.cpp src/network/topology.cpp src/education/testcase.cpp src/tools/topology_analyze.cpp src/education/tutor.cpp src/education/cpu_tutor_algorithms.cpp src/education/cpu_tutor_algorithms_alpha.cpp src/education/testcase_loader.cpp src/tools/topology_factory.cpp src/emulation/emulator_frontend.cpp src/emulation/cpu_emulator.cpp src/emulation/emulator.cpp
+EDUCATIONTEST_SOURCES := src/tests/education_test.cpp src/network/network.cpp src/network/topology.cpp src/education/testcase.cpp src/tools/topology_analyze.cpp src/education/tutor.cpp src/education/cpu_tutor_algorithms.cpp src/education/cpu_tutor_algorithms_alpha.cpp src/education/testcase_loader.cpp src/tools/topology_factory.cpp src/emulation/emulator_frontend.cpp src/emulation/cpu_emulator.cpp src/emulation/emulator.cpp src/tools/network_test.cpp
 
 MBTUTOR_SOURCES := src/education/tutor_main.cpp src/network/network.cpp src/network/topology.cpp src/education/testcase.cpp src/tools/topology_analyze.cpp src/education/tutor.cpp src/education/cpu_tutor_algorithms.cpp src/education/cpu_tutor_algorithms_alpha.cpp src/education/testcase_loader.cpp src/tools/topology_factory.cpp src/emulation/emulator_frontend.cpp src/emulation/cpu_emulator.cpp src/emulation/emulator.cpp src/tools/network_test.cpp
 

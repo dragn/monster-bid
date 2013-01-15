@@ -164,7 +164,7 @@ CPUTutorAlgorithms::mutate ( NetworkPtr network, float power )
 	float coef = 1;
 	uint size = network->get_size();
 
-	for (uint i = 0; i < count; i++){
+	for (uint ix = 0; ix < count; ix++){
 		uint i = 0; 
 		uint j = 0;
 		do{

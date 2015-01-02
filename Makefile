@@ -42,7 +42,7 @@ MBTESTER_EXECUTABLE := mbtester
 CUDA_HOME := /usr/cuda
 
 # ------------  list of all source files  --------------------------------------
-SOURCES         := src/Common/Ticker.cpp src/Formatter/Formatter.cpp src/Formatter/FormatterMain.cpp src/Network/Network.cpp src/Topology/TopoGen.cpp src/Topology/TopoGenMain.cpp src/Topology/TopologyDefinition.cpp src/Tutor/TestCase.cpp src/Tutor/Tutor.cpp src/Tutor/TutorMain.cpp
+SOURCES         := src/Formatter/Formatter.cpp src/Formatter/FormatterMain.cpp src/Network/Network.cpp src/Topology/TopoGen.cpp src/Topology/TopoGenMain.cpp src/Topology/TopologyDefinition.cpp src/Tutor/TestCase.cpp src/Tutor/Tutor.cpp src/Tutor/TutorMain.cpp
 
 NETWORKTEST_SOURCES := src/network/network.cpp src/network/topology.cpp src/tests/network_test.cpp src/tools/topology_analyze.cpp src/emulation/emulator_frontend.cpp src/emulation/cpu_emulator.cpp src/emulation/emulator.cpp src/tools/topology_factory.cpp
 
@@ -156,26 +156,22 @@ MBTESTER_OBJECTS = $(addsuffix .o,$(basename $(MBTESTER_SOURCES)))
 PREREQUISITES   = $(addprefix .,$(addsuffix .d,$(BASENAMES)))
 
 # ------------  make the executable (the default goal)  ------------------------
-$(EXECUTABLE):	$(OBJECTS)
-ifeq ($(strip $(CPP_SOURCES)),)
-								$(CC)  $(ALL_LFLAGS) -o $(EXECUTABLE) $(OBJECTS) $(LOCAL_LIBSS) $(GLOBAL_LIBSS) $(SYS_LIBS)
-else
-								$(CXX) $(ALL_LFLAGS) -o $(EXECUTABLE) $(OBJECTS) $(LOCAL_LIBSS) $(GLOBAL_LIBSS) $(SYS_LIBS)
-endif
-ifeq ($(EXE_START),yes)
-								./$(EXECUTABLE) $(EXE_CMDLINE)
-endif
+default: $(MBTUTOR_EXECUTABLE) $(MBTESTER_EXECUTABLE)
 
 $(NETWORKTEST_EXECUTABLE): $(NETWORKTEST_OBJECTS)
+	mkdir -p $(BIN_DIR)
 								$(CXX) $(ALL_LFLAGS) -o $(BIN_DIR)/$(NETWORKTEST_EXECUTABLE) $(NETWORKTEST_OBJECTS) $(LOCAL_LIBSS) $(GLOBAL_LIBSS) $(SYS_LIBS)
 
 $(EDUCATIONTEST_EXECUTABLE): $(EDUCATIONTEST_OBJECTS)
+	mkdir -p $(BIN_DIR)
 								$(CXX) $(ALL_LFLAGS) -o $(BIN_DIR)/$(EDUCATIONTEST_EXECUTABLE) $(EDUCATIONTEST_OBJECTS) $(LOCAL_LIBSS) $(GLOBAL_LIBSS) $(SYS_LIBS)
 
 $(MBTUTOR_EXECUTABLE): $(MBTUTOR_OBJECTS)
+	mkdir -p $(BIN_DIR)
 								$(CXX) $(ALL_LFLAGS) -o $(BIN_DIR)/$(MBTUTOR_EXECUTABLE) $(MBTUTOR_OBJECTS) $(LOCAL_LIBSS) $(GLOBAL_LIBSS) $(SYS_LIBS)
 
 $(MBTESTER_EXECUTABLE): $(MBTESTER_OBJECTS)
+	mkdir -p $(BIN_DIR)
 								$(CXX) $(ALL_LFLAGS) -o $(BIN_DIR)/$(MBTESTER_EXECUTABLE) $(MBTESTER_OBJECTS) $(LOCAL_LIBSS) $(GLOBAL_LIBSS) $(SYS_LIBS)
 
 # ------------  include the automatically generated prerequisites  -------------
